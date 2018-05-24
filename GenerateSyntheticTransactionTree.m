@@ -39,7 +39,7 @@ for h = 1:NumberOfBlocksToGenerate
     end
 end
 
-% Save it
+%% Save it
 fid = fopen('SyntheticBlockchain_Uniform.csv','wt');
 if fid>0
     for k=1:size(txns,1)
