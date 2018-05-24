@@ -1,2 +1,19 @@
-# BlockchainAnalysisGAN
-Utilization of generative adversarial networks (GANs) to identify best practices for fungibility-preserving transaction patterns in the Monero ecosystem.
+## Utilization of generative adversarial networks (GANs) to identify best practices for fungibility-preserving transaction patterns.
+
+IsthmusCrypto // IsthmusCrypto@protonmail.com
+
+2018-05-23
+
+*ABSTRACT:* Generative adversarial networks (GANs) are a class of unsupervised machine learning algorithms, capable of rapidly accelerating the development of blockchain analysis techniques and fungibility defenses simultaneously. The adversarial generator/discriminator framework agnostically drives the evolution of strategies for decoy selection and churn methods (although these are often considered as two different problems, imposing that artificial distinction is optional and may limit access to optimal solutions).
+
+In this application, the generator and discriminator are directly interpretable due to clear real-world parallels: the generator is a Monero user, wishing to generate transaction patterns whose true flow of funds is indistinguishable from the alternate possibilities co-presented by the other ring members and the churn transactions. The discriminator is an adversary wishing to use process-of-elimination or heuristic techniques to distinguish the true signer from decoy ring members, defeating churn methods if successful across multiple sequential transactions.
+
+For a given adversarial training iteration, the generator and discriminator share access to a common Monero-style transaction tree (synthetic or historical blockchain). The generator crafts a large number of example spending patterns (initially based on sub-optimal strategies). Half of the examples are used to train the discriminator, with the spend path labeled. Then the discriminator evaluates the other (unlabeled) examples. The generator receives feedback on which examples evaded analysis, and uses this information to improve spending patterns for the next iteration. Over the course of many training cycles the discriminator achieves optimal performance for Monero blockchain analysis, while the generator learns how to ensure fungibility against state-of-the-art tracing attempts. Due to the invalidity of security through obscurity, and the retrospective nature of blockchain deanonymization, it is in the best interests of the Monero community to maintain the leading edge in developing attacks against transaction privacy.
+
+This adversarial approach can be used to test and sharpen any proposed decoy selection and/or churn methods, or generate new strategies from scratch (by allowing evolution of methods seeded by noise). To effectively model the real-world problems being addressed, this configuration contains two features that appear to be novel for GAN research and applications:
+
+1) Each time the generator updates its strategies, the new methods are made known to the discriminator prior to training. Typically, the discriminator is not privy to the strategies employed by the generator; this modification reflects the fact that all Monero best-practice recommendations are fully available to both users (generators) and adversaries (discriminators).
+
+2) The discriminator is allowed to poison some outputs in the shared blockchain (i.e. have knowledge of their true spend state), and use this information in its evaluation of the unlabeled examples. This represents the fact that real adversaries can use knowledge of outputs that they control to eliminate ring members and strengthen other heuristic attacks. Since Monero users are unable to ever ascertain which outputs are hostile, this information asymmetry is imposed on the model: even when the generator learns which spend patterns were unsuccessful, it is not informed how the classification was achieved. Specific compromised-output schemes could be probabilistically imposed, or the poisoning distribution could be subject to adversarial evolution itself! Identifying best practices for poisoning the blockchain is crucial to developing best practices for conducting fungible transactions in the worst-case scenario.
+
+
