@@ -1,7 +1,5 @@
 ## Utilization of generative adversarial networks (GANs) to identify best practices for fungibility-preserving transaction patterns.
 
-IsthmusCrypto // IsthmusCrypto@protonmail.com
-
 2018-05-23
 
 *ABSTRACT:* Generative adversarial networks (GANs) are a class of unsupervised machine learning algorithms, capable of rapidly accelerating the development of blockchain analysis techniques and fungibility defenses simultaneously. The adversarial generator/discriminator framework agnostically drives the evolution of strategies for decoy selection and churn methods (although these are often considered as two different problems, imposing that artificial distinction is optional and may limit access to optimal solutions).
